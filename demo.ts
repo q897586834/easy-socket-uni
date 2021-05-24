@@ -1,7 +1,8 @@
-/** 2021/4/13
+/** 2021/5/24
  * @author:Sakura96
- * @desc: 途家Im
+ * @desc: socket demo
  */
+
 import SocketCase from './index'
 
 let socket = new SocketCase()

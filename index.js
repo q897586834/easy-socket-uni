@@ -16,7 +16,8 @@ class SocketCase {
       socketConnectDoneCallbackList: [],
       onSocketOpenCallbackList: [],
       onSocketErrorCallbackList: [],
-      onSocketCloseCallbackList: []
+      onSocketCloseCallbackList: [],
+      onMsgCallbackList: [],
     };
     // 长链接实例
     this.socket = null;
@@ -53,6 +54,11 @@ class SocketCase {
   // 监听socket连接错误的回调
   errorCallback(event) {
     this.tigerCallBack("onSocketErrorCallbackList", event);
+  }
+
+  // 注册监听接收消息的回调
+  registerOnMsg(callback) {
+    this.callbackManager["onMsgCallbackList"].push(callback);
   }
 
   // 监听socket消息的回调
